@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 19:32:00 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/17 23:10:32 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/18 23:48:45 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,9 @@ void	char2hex(char c)
 	char	right;
 	char	*hex_arr;
 
-	hex_arr = "abcdef";
-	left = c / 16;
-	right = c % 16;
-	right = hex_arr[right % 10];
-	left = left + '0';
+	hex_arr = "0123456789abcdef";
+	left = hex_arr[c / 16];
+	right = hex_arr[c % 16];
 	print('\\');
 	print(left);
 	print(right);

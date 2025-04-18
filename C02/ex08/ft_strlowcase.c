@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 02:15:12 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/17 02:26:11 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/18 22:36:50 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strlowcase(char *str)
 {
-	while (*str)
+	int	counter;
+
+	counter = 0;
+	while (str[counter])
 	{
-		if (*str >= 'A' && *str <= 'Z')
-			*str = *str + 32;
-		str++;
+		if (str[counter] >= 'A' && str[counter] <= 'Z')
+			str[counter] = str[counter] + 32;
+		counter++;
 	}
 	return (str);
 }

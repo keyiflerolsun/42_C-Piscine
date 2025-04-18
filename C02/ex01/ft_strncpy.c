@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:23:22 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/16 17:48:45 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/19 00:05:40 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	unsigned int	counter;
 
 	counter = 0;
+	while (src[counter] && counter < n)
+	{
+		dest[counter] = src[counter];
+		counter++;
+	}
 	while (counter < n)
 	{
-		if (src[counter] == '\0')
-		{
-			dest[counter] = '\0';
-			break ;
-		}
-		dest[counter] = src[counter];
+		dest[counter] = '\0';
 		counter++;
 	}
 	return (dest);

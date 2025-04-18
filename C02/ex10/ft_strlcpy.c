@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 13:03:32 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/17 19:03:55 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/18 23:41:27 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,16 @@ unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 	{
 		return (counter);
 	}
-	while (src[counter])
+	while (counter < size - 1)
 	{
-		if (counter + 1 == size)
-			dest[counter] = '\0';
-		else
-			dest[counter] = src[counter];
+		dest[counter] = src[counter];
 		counter++;
 	}
 	dest[counter] = '\0';
+	counter = 0;
+	while (src[counter])
+	{
+		counter++;
+	}
 	return (counter);
 }

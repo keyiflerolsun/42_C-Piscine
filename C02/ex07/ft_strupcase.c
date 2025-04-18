@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 01:29:20 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/17 02:14:29 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/18 22:35:52 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 char	*ft_strupcase(char *str)
 {
-	while (*str)
+	int	counter;
+
+	counter = 0;
+	while (str[counter])
 	{
-		if (*str >= 'a' && *str <= 'z')
-			*str = *str - 32;
-		str++;
+		if (str[counter] >= 'a' && str[counter] <= 'z')
+			str[counter] = str[counter] - 32;
+		counter++;
 	}
 	return (str);
 }
