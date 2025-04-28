@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 12:48:17 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/23 17:18:45 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/27 12:30:04 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ int	main(int argc, char **argv)
 	int	i;
 	int	i_param;
 
-	if (argc < 3)
-		return (1);
+	(void) argc;
 	ft_sort_args(argv);
 	i = 1;
 	i_param = 0;

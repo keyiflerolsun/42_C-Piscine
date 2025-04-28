@@ -6,9 +6,11 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 18:04:17 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/26 20:34:21 by osancak          ###   ########.fr       */
+/*   Updated: 2025/04/28 14:44:07 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	ft_strlen(char *str)
 {
@@ -69,9 +71,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	return (result);
 }
 /*
+#include <stdio.h>
+
 int	main(void) {
-	char **arr = (char *[]){"Merhaba", "Dunya"};
-	char *gg = ft_strjoin(2, arr, ", ");
+	char **arr = (char *[]){"Merhaba", "Dunya", "42", "İstanbul"};
+	char *gg = ft_strjoin(4, arr, ", ");
+	printf("%s", gg);
 	return (0);
 }
 */

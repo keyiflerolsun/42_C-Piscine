@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_point.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: osancak <osancak@student.42istanbul.com.t  +#+  +:+       +#+        */
+/*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/27 01:42:22 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/27 01:43:16 by osancak          ###   ########.fr       */
+/*   Created: 2025/04/27 12:01:59 by osancak           #+#    #+#             */
+/*   Updated: 2025/04/27 12:14:02 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
