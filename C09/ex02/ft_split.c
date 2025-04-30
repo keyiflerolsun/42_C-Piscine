@@ -6,7 +6,7 @@
 /*   By: osancak <osancak@student.42istanbul.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 22:08:31 by osancak           #+#    #+#             */
-/*   Updated: 2025/04/30 23:40:58 by osancak          ###   ########.fr       */
+/*   Updated: 2025/05/01 01:19:31 by osancak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_in_charset(char c, char *charset)
 	return (0);
 }
 
-int	*ft_how_many_arr(char *str, char *charset)
+int	*ft_counts(char *str, char *charset)
 {
 	int	*result;
 	int	i;
@@ -49,6 +49,8 @@ char	*ft_strdup(char *src)
 	while (src[i])
 		i++;
 	dest = malloc(i + 1);
+	if (!dest)
+		return (NULL);
 	dest[i] = '\0';
 	i--;
 	while (i >= 0)
@@ -59,31 +61,47 @@ char	*ft_strdup(char *src)
 	return (dest);
 }
 
+void	ft_split_loop(char *temp, char **result, char *charset)
+{
+	int	s_i;
+	int	w_s;
+	int	w_i;
+
+	s_i = 0;
+	w_s = 0;
+	w_i = 0;
+	while (temp[s_i])
+	{
+		if (ft_in_charset(temp[s_i], charset))
+		{
+			temp[s_i] = '\0';
+			result[w_i] = ft_strdup(&temp[w_s]);
+			w_i++;
+			w_s = s_i + 1;
+		}
+		s_i++;
+	}
+	result[w_i] = ft_strdup(&temp[w_s]);
+	result[w_i + 1] = NULL;
+}
+
 char	**ft_split(char *str, char *charset)
 {
-	char	*temp;
 	char	**result;
-	int		*how_many;
-	int		i[3];
+	char	*temp;
+	int		*counts;
 
 	temp = ft_strdup(str);
-	how_many = ft_how_many_arr(str, charset);
-	result = malloc((how_many[1] + 1) * sizeof(char *));
-	i[0] = 0;
-	i[1] = 0;
-	i[2] = 0;
-	while (str[i[0]])
-	{
-		if (ft_in_charset(str[i[0]], charset))
-		{
-			temp[i[0]] = '\0';
-			result[i[2]++] = ft_strdup(&temp[i[1]]);
-			i[1] = i[0] + 1;
-			if (how_many[0] - 1 == i[2])
-				result[i[2]] = ft_strdup(&temp[i[1]]);
-		}
-		i[0]++;
-	}
-	result[how_many[1]] = NULL;
+	if (!temp)
+		return (NULL);
+	counts = ft_counts(str, charset);
+	if (!counts)
+		return (NULL);
+	result = malloc((counts[0] + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	ft_split_loop(temp, result, charset);
+	free(counts);
+	free(temp);
 	return (result);
 }

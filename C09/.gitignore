@@ -6,3 +6,4 @@ main*
 
 libft.a
 srcs/
+*.o
